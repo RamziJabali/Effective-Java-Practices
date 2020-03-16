@@ -83,7 +83,7 @@ public void setServingSize(int val){
 servingSize = val;
 }
 "                                 "
-`
+```
 Unfortunately, the JavaBeans pattern has serious disadvantages of its own.
 Because contruction is split across multiple calls, a JavaBean may be insconsistent stat partway through its construction.
 
@@ -95,7 +95,7 @@ Instead of making a desired object direclty, the client calls the constructor(or
 parameters and gets a `builder object`. Then the client calls setter-like methods on the builder object to set each ptional parameter of interest. Finally, the client calls a parameterless `build` method to generate the object, which is immutable. 
 
 The builder is a static member class of the class it builds.
-```
+
 Example:
 
 ```
