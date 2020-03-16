@@ -24,7 +24,7 @@ constructors cannot be subclassed.
 
 
 Example:
-`
+```
  private CoordinatesStaticFactoryMethod(double x, double y) {
         this.x = x;
         this.y = y;
@@ -37,14 +37,14 @@ Example:
    public static final CoordinatesStaticFactoryMethod fromAngles(double angle, double distance) {
        return new CoordinatesStaticFactoryMethod(distance * Math.cos(angle), distance * Math.sin(angle));
     }
-`
+```
 # Item 2:
 
 Static factories and constructors share a limitation: they do not scale well to large 
 numbers of optional parameters.
 
 Example:
-`
+```
     public boolean isUserEnteringRow;
     public boolean isUserEnteringColumn;
     public boolean startOfGame;
@@ -52,7 +52,7 @@ Example:
     public boolean didCurrentUserHitOwnShip;
     public boolean didCurrentUserHitEnemyShip;
     public boolean isShipAlreadyHit;
-`
+```
 Traditionally, programmers have used `Telescoping constructors` pattern, in which you provide a contructor
 with only the required parameters, another with single optional parameters, a third with two optional parameters,
 and so on, culminating in a constructor with all the optional paramters.
@@ -64,7 +64,7 @@ The telescoping constructor patterens work, but it is hard to write client code 
 In which you call a parametersless contructor to create the object and call the setter and getter methods
 to set each required parameter and each optional parameter of interest.
 
-`
+```
 //JavaBeans Pattern - allows inconsistency, mandates mutability
 
 public class NutritionFacts{
@@ -95,10 +95,10 @@ Instead of making a desired object direclty, the client calls the constructor(or
 parameters and gets a `builder object`. Then the client calls setter-like methods on the builder object to set each ptional parameter of interest. Finally, the client calls a parameterless `build` method to generate the object, which is immutable. 
 
 The builder is a static member class of the class it builds.
-
+```
 Example:
 
-`
+```
 public class NutritionFacts{
   //parameters initialized to default values(if any)
   private int servingSize;
@@ -143,7 +143,7 @@ public class NutritionFacts{
   return new NutritionFacts(this);
   }
 }
-`
+```
 
 Note that `NutritionFacts` is immuatable, and that all parameter default values are in a single location.
 
@@ -151,7 +151,7 @@ The builder's setter methods return the builder itself so that invocations can b
 
 Here is how the client code looks:
 
-`
+```
 NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8).
     calories(100).sodium(35).carbohydrates(27).build();
-`
+```
