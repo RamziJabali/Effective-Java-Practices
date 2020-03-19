@@ -1,8 +1,7 @@
 # Table of Contents  
 - [Item 1:](#item-1)
   - [1. Creating & Destroying Objects](#1-creating--destroying-objects)
-
--[Item 2:](#item-2)
+- [Item 2:](#item-2)
 
 
 # Item 1:
