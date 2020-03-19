@@ -1,5 +1,5 @@
 # Table of Contents  
-- [1. Creating & Destroying Objects](#1-staticfactorymethods)
+- [1. Creating & Destroying Objects](#1. Creating & Destroying Objects)
 - [2. ](#2-)
 
 
