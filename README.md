@@ -1,7 +1,7 @@
 # Table of Contents  
 - [Item 1:](#item-1)
   - [1. Creating & Destroying Objects](#1-creating--destroying-objects)
-  - [2. ](#2-)
+-[Item 2:](#item-2)
 
 
 # Item 1:
@@ -40,6 +40,7 @@ Example:
     }
 ```
 # Item 2:
+### Consider a builder when faced with many constructor parameters
 
 Static factories and constructors share a limitation: they do not scale well to large 
 numbers of optional parameters.
@@ -88,8 +89,7 @@ servingSize = val;
 Unfortunately, the JavaBeans pattern has serious disadvantages of its own.
 Because contruction is split across multiple calls, a JavaBean may be insconsistent stat partway through its construction.
 
-### Luckily, there is a third alternative that combines the safety of telescoping constructor pattern with the readability
-### of the JavaBeans pattern.
+### Luckily, there is a third alternative that combines the safety of telescoping constructor pattern with the readability of the JavaBeans pattern.
 
 It is a form of the `Builder` pattern.
 Instead of making a desired object direclty, the client calls the constructor(or a static factory) with all the required 
