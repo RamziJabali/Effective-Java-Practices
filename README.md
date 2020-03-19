@@ -1,5 +1,5 @@
 # Table of Contents  
-- [1. Creating & Destroying Objects](#1-creating-and--destroying-objects)
+- [1. Creating & Destroying Objects](#1-creating--destroying-objects)
 - [2. ](#2-)
 
 
