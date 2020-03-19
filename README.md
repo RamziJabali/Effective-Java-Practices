@@ -1,12 +1,11 @@
 # Table of Contents  
-- [Item 1:](#item-1)
-  - [Creating & Destroying Objects](#1-creating--destroying-objects)
-- [Item 2:](#item-2)
-  - [Consider a builder when faced with many constructor parameters](#consider-a-builder-when-faced-with-many-constructor-parameters)
+- [Creating & Destroying Objects](#1-creating--destroying-objects)
+  - [Item 1:](#item-1)
+  - [Item 2:](#item-2)
+    - [Consider a builder when faced with many constructor parameters](#consider-a-builder-when-faced-with-many-constructor-parameters)
   
-  
-# Item 1:
 # Creating & Destroying Objects
+# Item 1:
 
 ### What is a Static Factory Method: Simply a static method that returns an instant of the class.
 
@@ -88,13 +87,15 @@ servingSize = val;
 "                                 "
 ```
 Unfortunately, the JavaBeans pattern has serious disadvantages of its own.
-Because contruction is split across multiple calls, a JavaBean may be insconsistent stat partway through its construction.
+Because contruction is split across multiple calls, a JavaBean may be in an insconsistent state partway through its construction.
 
 ### Luckily, there is a third alternative that combines the safety of telescoping constructor pattern with the readability of the JavaBeans pattern.
 
 It is a form of the `Builder` pattern.
 Instead of making a desired object direclty, the client calls the constructor(or a static factory) with all the required 
 parameters and gets a `builder object`. Then the client calls setter-like methods on the builder object to set each ptional parameter of interest. Finally, the client calls a parameterless `build` method to generate the object, which is immutable. 
+
+Builder pattern aims to “Separate the construction of a complex object from its representation so that the same construction process can create different representations.”
 
 The builder is a static member class of the class it builds.
 
@@ -157,3 +158,5 @@ Here is how the client code looks:
 NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8).
     calories(100).sodium(35).carbohydrates(27).build();
 ```
+
+that above created user object does not have any setter method, so it’s state can not be changed once it has been built. This provides the desired immutability.
