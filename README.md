@@ -1,11 +1,11 @@
 # Table of Contents  
 - [Item 1:](#item-1)
-  - [1. Creating & Destroying Objects](#1-creating--destroying-objects)
+  - [Creating & Destroying Objects](#1-creating--destroying-objects)
 - [Item 2:](#item-2)
-
+  - [Consider a builder when faced with many constructor parameters](#consider-a-builder-when-faced-with-many-constructor-parameters)
 
 # Item 1:
-# 1. Creating & Destroying Objects
+# Creating & Destroying Objects
 
 ### What is a Static Factory Method: Simply a static method that returns an instant of the class.
 
