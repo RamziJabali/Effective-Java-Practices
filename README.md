@@ -261,3 +261,24 @@ String from y is hello i am a string part of singleton class
 String from z is hello i am a string part of singleton class
 ```
 ![1](https://github.com/RamziJabali/Effective-Java-Practices/blob/master/pics-for%3Deffective-java/singleton-class-java.png)
+
+Explanation:
+1) In the Singleton class, when we first time call getInstance() method, it creates an object of the class with name single_instance and return it to the variable. 
+
+2) Since single_instance is static, it is changed from null to some object. 
+
+3) Next time, if we try to call getInstance() method, since single_instance is not null, it is returned to the variable, instead of instantiating the Singleton class again. This part is done by if condition.
+
+### Implementing Singleton class with method name as that of class name
+```
+   // static method to create instance of Singleton class 
+    public static Singleton Singleton() 
+    { 
+        // To ensure only one instance is created 
+        if (single_instance == null) 
+        { 
+            single_instance = new Singleton(); 
+        } 
+        return single_instance; 
+    } 
+```
