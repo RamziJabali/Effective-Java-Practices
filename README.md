@@ -260,3 +260,4 @@ String from x is hello i am a string part of singleton class
 String from y is hello i am a string part of singleton class
 String from z is hello i am a string part of singleton class
 ```
+![1](https://github.com/RamziJabali/Effective-Java-Practices/blob/master/pics-for%3Deffective-java/singleton-class-java.png)
