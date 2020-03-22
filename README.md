@@ -92,8 +92,9 @@ Because contruction is split across multiple calls, a JavaBean may be in an insc
 ### Luckily, there is a third alternative that combines the safety of telescoping constructor pattern with the readability of the JavaBeans pattern.
 
 It is a form of the `Builder` pattern.
+Alternative way to construct complex objects.
 Instead of making a desired object direclty, the client calls the constructor(or a static factory) with all the required 
-parameters and gets a `builder object`. Then the client calls setter-like methods on the builder object to set each ptional parameter of interest. Finally, the client calls a parameterless `build` method to generate the object, which is immutable. 
+parameters and gets a `builder object`. Then the client calls setter-like methods on the builder object to set each optional parameter of interest. Finally, the client calls a parameterless `build` method to generate the object, which is immutable. 
 
 Builder pattern aims to “Separate the construction of a complex object from its representation so that the same construction process can create different representations.”
 
@@ -160,3 +161,15 @@ NutritionFacts cocaCola = new NutritionFacts.Builder(240, 8).
 ```
 
 that above created user object does not have any setter method, so it’s state can not be changed once it has been built. This provides the desired immutability.
+
+# Item 3
+### Enforce The Singleton property with a private constructor or an enum type
+
+A `Singleton` is simply a class that is instantiated exactly once, can have only one object (an instance of the class) at a time.
+
+To design a singleton class:
+
+Make constructor as private.
+Write a static method that has return type object of this singleton class. Here, the concept of Lazy initialization is used to write this static method.
+
+
