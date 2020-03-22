@@ -3,6 +3,7 @@
   - [Item 1:](#item-1)
   - [Item 2:](#item-2)
     - [Consider a builder when faced with many constructor parameters](#consider-a-builder-when-faced-with-many-constructor-parameters)
+  - [Item 3:](#item-3)
   
 # Creating & Destroying Objects
 # Item 1:
